@@ -4,12 +4,12 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-
+env:
+  CI: true
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      CI: true
+    
     steps:
       - uses: actions/checkout@v3
       - name: Setup Node.js environment
