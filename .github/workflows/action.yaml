@@ -4,12 +4,12 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-env:
-  CI: true
+
 jobs:
   build:
+    env:
+      CI: true
     runs-on: ubuntu-latest
-    
     steps:
       - uses: actions/checkout@v3
       - name: Setup Node.js environment
@@ -17,5 +17,5 @@ jobs:
         with: 
           node-version: '14.x'
       - run: npm install
-      - run: npm run deploy
+      - run: npm run build
       - run: npm test
